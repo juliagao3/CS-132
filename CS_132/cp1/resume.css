@@ -1,0 +1,55 @@
+/*
+    Name: Julia Gao
+    CS 132 Spring 2024
+    Date: April 11, 2024
+    This is resume.css for the resume webpage linked to the original webpage
+    with some other formatting not shared by the styles.css.
+
+    
+    Start from more general to specific.
+
+*/
+
+h2, p {
+    padding-left: 200px;
+}
+
+h2 {
+    font-size: 3.9em;
+}
+
+hr {
+    height: 5px;
+    width: 80%;
+    background-color: black;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+}
+
+p {
+    display: inline-block;
+    padding-right: 160px;
+}
+
+#major {
+    padding-left: 300px;
+}
+
+#major, ul {
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 2.2em;
+}
+
+ul{
+    padding-left: 250px;
+    padding-right: 350px;
+}
+
+.category {
+    font-weight: bold;
+}
+
+

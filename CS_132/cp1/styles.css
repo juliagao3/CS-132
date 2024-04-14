@@ -1,0 +1,34 @@
+/*
+    Name: Julia Gao
+    CS 132 Spring 2024
+    Date: April 11, 2024
+    This is styles.css page for my portfolio of web development work. It is
+    used by all the pages of my website to give the audience a more engaging
+    and fun webisde to look at. It currently offers a welcoming theme to 
+    come and get to know me.
+
+    Start from more general to specific.
+*/
+
+
+body{
+    font-family: 'Whisper', sans-serif;
+}
+
+body > header > h1, footer {
+    font-size: 9.6em;
+    text-align: center;
+}
+
+footer, p {
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 2.2em;
+}
+
+footer {
+    font-size: 1.8em;
+}
+
+
+
+
