@@ -4,6 +4,7 @@
         'france': ['imgs/france2.JPG', 'imgs/france.png', 'imgs/france1.jpg'],
         'prague': ['imgs/prague2.JPG', 'imgs/prague3.png', 'imgs/prague.png'],
         'julia': ['imgs/julia2.JPG', 'imgs/julia3.jpg', 'imgs/julia1.png']};
+    let count = 0;
   
     function init() {
         const CONTAINERS = qsa('.images');
@@ -25,7 +26,6 @@
     function changeImage(city, direction) {
         const NUMIMAGES = paths[city].length;
         const NUM = 1;
-        let count = 0;
         if (direction === "forward") {
             updateImage(city, count);
             count = (count + NUM) % NUMIMAGES;
