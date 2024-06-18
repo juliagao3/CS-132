@@ -1,0 +1,13 @@
+Please fill out the following and submit with your CP 2 submission (added to help us know what 
+to focus on when grading):
+
+1. What have you learned and applied in CP 2 since CP 1?
+I have learned about how to not use extra tags that are unnecessary as well as layout and 
+formatting. I also think that I have learned how to incorporate javascript into the websites
+to allow user interactivity. Furthermore, I have learned more about which tags should be used.
+2. To what extent would you like feedback in CP 2 (e.g. thorough, particular areas of 
+HTML/CSS/JS/UI)?
+I would like thorough feedback since I would like this to be my personal website when I apply
+to future jobs/grad school.
+3. Anything else you would like the grader to know?
+My project is on GitHub since I have too many images.
