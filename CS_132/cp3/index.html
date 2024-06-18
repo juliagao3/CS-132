@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Name: Julia Gao
+    CS 132 Spring 2024
+    Date: April 26, 2024
+    This is the index.html for my portfolio of web development work. It includes
+    a AboutMe page as the home page and a link to my resume as well as a page to
+    my hobbies.
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Whisper&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+    <script src="utils.js"></script>
+    <script defer src="events.js"></script>
+    <title>Julia Gao</title> <!-- It is the name on the actual tab -->
+</head>
+<body>
+    <!-- Top header -->
+    <header>
+        <h1>Julia Gao</h1>
+        <p id="message-area" class="hidden"></p>
+    </header>
+    <main>
+        <aside>
+            <ul>
+                <li>
+                    <button id="home"> Home Page </button>
+                </li>
+                <li>
+                    <button id="resumeLink"> Resume </button>
+                </li>
+                <li>
+                    <button id="hobbyLink"> Hobbies </button>
+                </li>
+            </ul>
+        </aside>
+        <section id="personal">
+            <figure>
+                <div class="images" id="julia">
+                    <div class="arrows">
+                        <button class="left-button">&Larr;</button>
+                        <button class="right-button">&Rarr;</button>
+                    </div>
+                    <img id="image" src="imgs/julia1.png" alt="Me riding on London Ferris Wheel 
+                        (London Eye)">
+                </div>
+                <div>
+                    <header>
+                        <h3>My Background</h3>
+                    </header>
+                    <p>
+                        I am an only child. I was born in St. Louis, Missouri before moving to 
+                        Shanghai, China around a few months old. At 6 years old, I came back 
+                        for kindergarten in Rochester, New York. At the end of second grade, 
+                        I moved to Greensboro, North Carolina where my dad had a new job as a
+                        teaching professor. During the summer of my fourth grade, I went to 
+                        live with my mother in Union, Kentucky since she found a job at Toyota.
+                        I finished elementary school there. In middle school after seventh 
+                        grade, there was a big move by Toyota to Texas. Thus, I moved to 
+                        Frisco, Texas. This is where I stayed for high school with my whole 
+                        family as my dad came to Texas as well. Finally, I came to California 
+                        for college and hope to stay after I graduate!
+                    </p>
+                </div>
+            </figure>
+        </section>
+        <section id="hobbies" class="hidden">
+            <header>
+                <h2>Places I Have Been To</h2>
+            </header>
+            <p>
+                A favorites hobby of mine is to travel around to new places and meet new 
+                people and cultures. 
+            </p>
+            <figure>
+                <div>
+                    <header>
+                        <button id='country-france'> Tignes, France </button>
+                    </header>
+                    <p>
+                        This was in winter of 2023 at one of the best snow resorts. It 
+                        was one of my best ski trips yet. I went with my friends and 
+                        also met so many new people. 
+                    </p>
+                </div>
+                <div class="images" id="france">
+                    <div class="arrows">
+                        <button class="left-button">&Larr;</button>
+                        <button class="right-button">&Rarr;</button>
+                    </div>
+                    <img src="imgs/france1.jpg" alt="Snow resort in Tignes, France">
+                </div>
+            </figure>
+            <figure>
+                <div>
+                    <header>
+                        <button id='country-united-kingdom'> London, United Kingdom </button>
+                    </header>
+                    <p>
+                        This was in fall of 2023 for my term study abroad. I went to
+                        Cambridge University. On my free weekends, I would go visit London
+                        and the tourist attractions such as London Eye, Tower of London, 
+                        and London Bridge. It was really amazing!
+                    </p>
+                </div>
+                <div class="images" id="london">
+                    <div class="arrows">
+                        <button class="left-button">&Larr;</button>
+                        <button class="right-button">&Rarr;</button>
+                    </div>
+                    <img src="imgs/london.png" alt="Night time sky of London, United Kingdom">
+                </div>
+            </figure>
+            <figure>
+                <div>
+                    <header>
+                        <button id='country-czechia'> Prague, Czech Republic </button>
+                    </header>
+                    <p>
+                        This was in the summer of 2019 before COVID. I went with my family. 
+                        On this trip, we went to Prague. I really enjoyed
+                        visiting the churches as well as the city and taking pictures. 
+                    </p>
+                </div>
+                <div class="images" id="prague">
+                    <div class="arrows">
+                        <button class="left-button">&Larr;</button>
+                        <button class="right-button">&Rarr;</button>
+                    </div>
+                    <img src="imgs/prague.png" alt="Daytime by the Valtara River in 
+                    Prague, Czech Republic">
+                </div>
+            </figure>
+        </section>
+
+        <!-- The second tab/page you can toggle between-->
+        <section id="resume" class="hidden">
+            <h2 class="title">Objective</h2>
+            <hr>
+            <p>Aspiring computer science student eager to explore research opportunities, with a
+                keen interest in artificialintelligence (AI) and machine learning.
+            </p>
+            <h2 class="title">Education</h2>
+            <hr>
+            <div class="line">
+                <p class="inline">
+                    <span class = "category">California Institute of Technology | Pasadena</span>
+                </p>
+                <p class="inline">
+                    <span class = "category">September 2021 - present</span>
+                </p>
+            </div>
+            <pre id="major">
+                <span class = "category">BS. Computer Science </span>    Cumulative GPA: 4.1/4.0
+            </pre>
+            <div class="line">
+                <p class="inline">
+                    <span class = "category">University of Cambridge | Cambridge</span>
+                </p>
+                <p class="inline">
+                    <span class = "category">October 2023 - December 2023</span>
+                </p>
+            </div>
+            <h2 class="title">Technical Skills</h2>
+            <hr>
+            <p>Java, Python, C++/C, Ocaml, HTML, Bash Scripting, Git, LaTex, HPC, Linux, SQL, 
+                VBA Editor, Wix, Microsoft Office, R, mySQL
+            </p>
+            <h2 class="title">Revelant Coursework</h2>
+            <hr>
+            <p>
+                <span class="category"> Computer Science </span>
+                :Algorithms, Decidability and Tractability, 
+                Computing Systems, Computer Programming, Programming Methods/Structures, 
+                Machine Learning, Software Design, Fundamentals of Computer Programming, 
+                Discrete Mathematics, Software Engineering, Relational Databases, Web Development,
+                Data Science, Concurrent and Distributed Systems, Semantics of Programming 
+                Languages
+            </p>
+            <p> 
+                <span class="category"> Math </span>
+                :One and Several Variable Calculus, Linear Algebra, Differential Equations</p>
+            <h2 class="title">Employment Experience</h2>
+            <hr>
+            <div class="line">
+                <p class="inline"><span class="category">NASA/JPL</span> | Machine Learning
+                    Research | Pasadena</p>
+                <p class="inline"><span class="category">April 2024 - present</span></p>
+            </div>
+            <ul class="details">
+                <li>Find methods to calculate standard deviation given a set of images
+                    with plumes of CO2 emissions in the air 
+                </li> 
+                <li>Test the accuracy rate of the method</li>
+            </ul>
+            <div class="line">
+                <p class="inline"><span class="category">Northrop Grumman</span> 
+                    | Software Enginnering | San Diego</p>
+                <p class="inline"><span class="category">June 2023 - August 2023</span></p>
+            </div>
+            <ul class="details">
+                <li>Wrote macro in Excel to automatically populate matrix for proposal metric 
+                    graph using VBA Editor</li>
+                <li>Documented tool in User Guide step by step instructions and screen shots</li>
+                <li>Collaborated with several different program managers for test cases/trial runs
+                    of macro</li>
+                <li>Implemented tool and presented results to upper management</li>
+            </ul>
+            <div class="line">
+                <p class="inline"><span class="category">3LawsRobotics</span>
+                    | Caltech Seed Fund | Pasadena</p>
+                <p class="inline"><span class="category">June 2022 - August 2022</span></p>
+            </div>
+            <ul class="details">
+                <li>Researched 25+ competitive companies within the market and did market 
+                    assessment using LaTex</li>
+                <li>Created company website with password and graphics using Wix</li>
+                <li>Gathered information on 2+ competitive company product prices</li>
+            </ul>
+            <h2 class="title">Project Experience</h2>
+            <hr>
+            <div class="line">
+                <p class="inline"><span class="category">Spread Sheet Engine</span> 
+                    | Software Engineering</p>
+                <p class="inline"><span class="category">January 2024 - March 2024</span></p>
+            </div>
+            <ul class="details">
+                <li>Collaborated in a team of 4 to implement a spreadsheet engine with 
+                    all different features in Python.
+                </li>
+            </ul>
+            <div class="line">
+                <p class="inline"><span class="category">Machine Learning</span> 
+                    | Neural Networks</p>
+                <p class="inline"><span class="category">March 2023 - June 2023</span></p>
+            </div>
+            <ul class="details">
+                <li>Collaborated in a team of 5 to create machine learning models for Kaggle 
+                    competition in Python.
+                </li>
+            </ul>
+            <div class="line">
+                <p class="inline"><span class="category">Game Creation</span> 
+                    | Software Design</p>
+                <p class="inline"><span class="category">March 2022 - June 2022</span></p>
+            </div>
+            <ul class="details">
+                <li>Collaborated in a team of 4 to create a game in C that was user that was
+                    user friendly to all ages.
+                </li>
+            </ul>
+        </section>
+        <section id="countries" class="hidden">
+            <!-- Source: https://restcountries.com/ -->
+        </section>
+    </main>
+    <footer>
+        Country Data API &copy; 2024
+    </footer>
+</body>
+</html>
+
+
+

@@ -1,0 +1,13 @@
+Please fill out the following and submit with your CP 3 submission (added to help us know what 
+to focus on when grading):
+
+1. What have you learned and applied in CP 3 since CP 1?
+I have learned how to fetch data from open source API's and be able to incorporate them 
+into our project. For mine, because I talked about my hobby of traveling, I was able to 
+pull actual data for each of these countries in case the user would like to learn more about
+the countries that I traveled to.
+2. To what extent would you like feedback in CP 3 (e.g. thorough, particular areas of 
+HTML/CSS/JS/UI)?
+I would like thorough feedback since I would like this to be my personal website when I apply
+to future jobs/grad school.
+3. Anything else you would like the grader to know?
