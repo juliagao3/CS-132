@@ -16,8 +16,10 @@
         'czechia': 'imgs/country-czechia.png'};
     const NUMBER = 0;
     const NUM = 1;
+    const NUM2 = 2;
     let count = 0;
   
+    // Initializes all of the different event handlers
     async function init() {
         const containers = qsa('.images');
         containers.forEach(container => {
@@ -56,6 +58,11 @@
         czech.addEventListener("click", () => viewCountry(czech.id))
     }
 
+    /**
+     * Calculates the index for which image is next
+     * @param {string} city - specific city
+     * @param {string} direction - either forward or backward
+     */
     function changeImage(city, direction) {
         const numIMAGES = PATHS[city].length;
         if (direction === "forward") {
@@ -67,6 +74,11 @@
         }
     }
 
+    /**
+     * Changes the image on the page
+     * @param {string} city - specific city
+     * @param {integer} count - the index of next image
+     */
     function updateImage(city, count) {
         let cont = qs('#' + city);
         let imagesrc = PATHS[city][count];
@@ -78,6 +90,7 @@
         cont.appendChild(image);
     }
 
+    // View resume tab
     function viewResume() {
         qs('#personal').classList.add('hidden');
         qs('#resume').classList.remove('hidden');
@@ -100,6 +113,7 @@
         errorMessage.classList.add('hidden');
     }
 
+    // View hobbies tab
     function viewHobbies() {
         qs('#personal').classList.add('hidden');
         qs('#resume').classList.add('hidden');
@@ -111,6 +125,11 @@
         errorMessage.classList.add('hidden');
     }
 
+    /**
+     * View the country information for specific country
+     * @param {string} country_name - specific country name
+     * 
+     */
     async function viewCountry(country_name) {
         qs('#hobbies').classList.add('hidden');
         qs('#countries').classList.remove('hidden');
@@ -118,11 +137,11 @@
         // inspiration: https://en.wikipedia.org/wiki/France
         const name = country_name.split('-');
         let url = '';
-        if (name.length == 2){
-            url = `https://restcountries.com/v3.1/name/${name[1]}`;
+        if (name.length == NUM2){
+            url = `https://restcountries.com/v3.1/name/${name[NUM]}`;
         }
         else {
-            url = `https://restcountries.com/v3.1/name/${name[1]+' '+name[2]}`;
+            url = `https://restcountries.com/v3.1/name/${name[NUM]+' '+name[NUM2]}`;
         }
 
         try {
@@ -220,6 +239,7 @@
         }
     }
 
+    // View courses tab
     function viewCourses() {
         const errorMessage = qs('#message-area');
         errorMessage.classList.add('hidden');
@@ -231,6 +251,7 @@
         qs('#courses').classList.remove('hidden');
     }
 
+    // View all courses I have taken
     async function viewAll() {
         const errorMessage = qs('#message-area');
         errorMessage.classList.add('hidden');
@@ -263,7 +284,7 @@
         }
     }
 
-
+    // View courses that I liked
     async function viewSpecific() {
         const errorMessage = qs('#message-area');
         errorMessage.classList.add('hidden');
@@ -321,6 +342,14 @@
         }
     }
 
+    /**
+     * Displays each course with the section and name, description, and professor
+     * @param {string} section - the html section
+     * @param {string} courseNum - course number
+     * @param {string} courseName - course name
+     * @param {string} professor - professor
+     * @param {string} description - description of the course
+     */
     function displayCourse(section, courseNum, courseName, professor, description) {
         const courseDiv = gen('div');
         courseDiv.classList.add('course');
@@ -341,6 +370,11 @@
         section.appendChild(courseDiv);
     }
 
+    /**
+     * Hangles all the errors that occur
+     * @param {string} errMsg - specific error message
+     * 
+     */
     function handleError(errMsg) {
         if (typeof errMsg === "string") {
             qs("#message-area").textContent = errMsg;

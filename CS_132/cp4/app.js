@@ -3,7 +3,7 @@
     CS 132 Spring 2024
     Date: June 13, 2024
     This is app.js that implements the backend API for my personal
-    website which is for fetching courses.
+    website which is for fetching all courses and specific course.
 */
 
 "use strict";
@@ -17,6 +17,8 @@ const SERVER_ERROR = "Something went wrong on the server, please try again later
 
 app.use(express.static("public"));
 
+// Returns a JSON list of all the classes
+// Returns a 500 error when something goes wrong with server
 app.get("/all-courses", async (req, res, next) => {
     try {
         const result = await fsp.readFile("course.json", "utf8");
@@ -29,6 +31,9 @@ app.get("/all-courses", async (req, res, next) => {
     }
 });
 
+// Returns a dictionary of specific course
+// Returns a 400 error when the input course is not valid
+// Returns a 500 error when something goes wrong with server
 app.get("/all-courses/:course", async (req, res, next) => {
     try {
         let course = req.params.course;
