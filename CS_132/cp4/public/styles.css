@@ -1,0 +1,198 @@
+/*
+    Name: Julia Gao
+    CS 132 Spring 2024
+    Date: June 7, 2024
+    This is styles.css page for my portfolio of web development work. It is
+    used by all the pages of my website to give the audience a more engaging
+    and fun webisde to look at. It currently offers a welcoming theme to 
+    come and get to know me.
+*/
+
+h1, footer {
+    font-size: 9.6em;
+}
+
+footer, p, #major, .details, button, div > ul > li {
+    font-family: 'Amatic SC', sans-serif;
+}
+
+p {
+    font-size: 2.2em;
+}
+
+footer {
+    font-size: 1.8em;
+}
+
+body, main, figure, .line, .images, .arrows, .info {
+    display: flex;
+}
+
+body, .images {
+    flex-direction: column;
+}
+
+body, #resumeLink, #home, #country-united-kingdom, #country-czechia, #country-france, 
+#hobbyLink, #courseLink, #cs, #fav {
+    font-family: 'Whisper', sans-serif;
+}
+
+aside, h3, h2, p, #country-united-kingdom, #country-czechia, #country-france {
+    font-size: 4.3em;
+}
+
+#resumeLink, #home, .left-button, .right-button, #country-united-kingdom, #country-czechia, 
+#country-france, #hobbyLink, button, #courseLink, #fav, #cs {
+    border: none;
+    background-color: transparent;
+}
+
+#resumeLink, #home, #hobbyLink, #courseLink {
+    font-size: 1em;
+}
+
+.images, figure, aside, h3, p, div > img {
+    align-items: center;
+}
+
+#resumeLink, #home, #country-united-kingdom, #country-czechia, 
+#country-france,  #hobbyLink, #courseLink {
+    transition: color 1s ease-out 100ms;
+    color: black;
+}
+
+#resumeLink:hover, #home:hover, #country-united-kingdom:hover, #country-czechia:hover, 
+#country-france:hover, #hobbyLink:hover, #courseLink:hover {
+    color: darkturquoise;
+}
+
+section, figure, hr {
+    width: 100%;
+}
+
+#resumeLink, #home, #country-united-kingdom, #country-czechia, #country-france, 
+#hobbyLink, #courseLink, button, #fav, #cs {
+    cursor: pointer;
+}
+
+section {
+    padding: 40px;
+}
+
+.line, .left-button, .right-button {
+    justify-content: space-between;
+}
+
+#major, .details, button {
+    font-size: 2.2em;
+}
+
+.left-button, .right-button {
+    margin-top: 20px;
+}
+
+.hidden, #personal.hidden, #resume.hidden, #countries.hidden, 
+#courses.hidden, #all.hidden, #favorite.hidden {
+    display: none;
+}
+
+.title {
+    font-size: 3.9em;
+}
+
+.left-button, .right-button, h3 {
+    font-size: 6em;
+}
+
+h3, h4, h1, footer {
+    text-align: center;
+}
+
+aside {
+    padding-left: 100px;
+    min-width: 225px;
+}
+
+h2 {
+    font-size: 5.5em;
+    margin-left: 20px;
+}
+
+h4 {
+    font-size: 4.5em;
+}
+
+p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+figure {
+    margin: 10px;
+}
+
+figure img {
+    width: 50%;
+}
+
+.images > img {
+    width: 600px;
+    height: 450px;
+}
+
+.arrows {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#image {
+    width: 500px;
+    height: 700px;
+}
+
+#major {
+    padding-left: 20px;
+}
+
+.details {
+    padding-left: 30px;
+    padding-right: 10px;
+}
+
+.class {
+    display: inline-block;
+}
+
+hr {
+    height: 5px;
+    background-color: black;
+}
+
+.category {
+    font-weight: bold;
+}
+
+div > img {
+    width: 65%;
+}
+
+div > ul {
+    list-style-type: none;
+}
+
+div > ul > li, p {
+    font-size: 2.5em;
+}
+
+   
+
+
+
+
+
+
+
+
+
+
+
