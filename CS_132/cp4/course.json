@@ -46,4 +46,6 @@
                             "description": "This course will cover popular methods in machine learning and data mining, with an emphasis on developing a working understanding of how to apply these methods in practice. The course will focus on basic foundational concepts underpinning and motivating modern machine learning and data mining approaches."},
   {"number": "CS 156ab", "course name": "Learning Systems",
                         "professor": "Abu-Mostafa",
-                        "description": "Introduction to 
+                        "description": "Introduction to the theory, algorithms, and applications of automated learning. How much information is needed to learn a task, how much computation is involved, and how it can be accomplished."} 
+  ]
+}

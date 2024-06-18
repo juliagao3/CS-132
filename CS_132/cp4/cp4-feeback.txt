@@ -1,0 +1,18 @@
+Please fill out the following and submit with your CP 4 submission (added to help us know what to focus on when grading):
+
+1. What have you learned and applied in CP 4 since previous assignments?
+From CP3, I learned about fetch and was able apply that into CP4 with writing our own endpoints
+and then fetching from them in order to incorporate into my personal webiste. I was also able to
+learn to apply and dynamically load items onto the page with generating the tags and appending them.
+Futhermore, I also applied information from CP1 with the flex layout and being able to create the layout
+that I wanted. 
+2. To what extent would you like feedback in CP 4 (e.g. thorough, particular areas of API design/implementation)?
+I would like thorough feedback since it is my personal webiste and I want to learn as much as I can
+and where to improve.
+3. Anything else you would like the grader to know?
+My project is on GitHub because I have too many images.
+X. We encourage you to post in the #eng-opp-cp-showcase as well! Engagement Opportunity credit is eligible if including:
+- Screenshots, a link to the site hosted on Github pages, or a demo video
+- Any wireframes/planning
+- A blurb of your inspiration, process, reflection, etc.
+- Comments on other student posts

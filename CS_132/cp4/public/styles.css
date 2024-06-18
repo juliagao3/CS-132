@@ -1,7 +1,7 @@
 /*
     Name: Julia Gao
     CS 132 Spring 2024
-    Date: June 7, 2024
+    Date: June 13, 2024
     This is styles.css page for my portfolio of web development work. It is
     used by all the pages of my website to give the audience a more engaging
     and fun webisde to look at. It currently offers a welcoming theme to 
@@ -16,7 +16,7 @@ footer, p, #major, .details, button, div > ul > li {
     font-family: 'Amatic SC', sans-serif;
 }
 
-p {
+p, #major, .details, button {
     font-size: 2.2em;
 }
 
@@ -81,10 +81,6 @@ section {
 
 .line, .left-button, .right-button {
     justify-content: space-between;
-}
-
-#major, .details, button {
-    font-size: 2.2em;
 }
 
 .left-button, .right-button {

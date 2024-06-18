@@ -342,4 +342,14 @@
     }
 
     function handleError(errMsg) {
-        
+        if (typeof errMsg === "string") {
+            qs("#message-area").textContent = errMsg;
+        } else {
+            qs("#message-area").textContent =
+                "An error ocurred fetching the country data. Please try again later.";
+        }
+        qs("#message-area").classList.remove("hidden");
+    }
+
+    init(); 
+})();
