@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- Name: Julia Gao
+     Term: Spring 2024
+     This is the index.html for the final project. It is going to be a tea shop that sells
+     tea inspired by Yi Fang Tea.  -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="store.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Whisper&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+    <script src="utils.js"></script>
+    <script defer src="store.js"></script>
+    <title>Tea Leaves & Harmony</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li id="homeBtn">Home</li>
+                <li id="prodBtn">Products</li>
+                <li id="promBtn">Promotions</li>
+                <li id="faqBtn">FAQ</li>
+                <li id="contactBtn">Contact Us</li>
+                <li id="cartBtn">&#128722;</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="container">
+                <img src="imgs/bulk-image-crop/shop.png" alt="Tea shoppe">
+                <h1>Welcome to Tea Leaves & Harmony!</h1>
+                <button id="shopBtn">Shop Products</button>
+            </div>
+        </section>
+
+        <section id="promotion" class="hidden">
+            <ul id="list"></ul>
+        </section>
+
+        <section id="product" class="hidden">
+            <div id="labels">
+                <label><input type="checkbox" value="oolong" class="category-checkbox"> Oolong Tea</label>
+                <label><input type="checkbox" value="green" class="category-checkbox"> Green Tea</label>
+                <label><input type="checkbox" value="black" class="category-checkbox"> Black Tea</label>
+                <label><input type="checkbox" value="white" class="category-checkbox"> White Tea</label>
+            </div>
+            <div id="products"></div>
+        </section>
+
+        <section id="single" class="hidden">
+        </section>
+
+        <section id="faq" class="hidden"></section>
+
+        <section id="contact" class="hidden">
+            <section id="touch">
+                <form id="contact-form">
+                    <h2>Get In Touch</h2>
+                    <p>
+                        <label>First Name: <input id="first" type="text" name="first" required/></label>
+                    </p>
+                    <p>
+                        <label>Last Name: <input id="last" type="text" name="last" required/></label>
+                    </p>
+                    <p>
+                        <label>Email: <input id="email" name="email" type="email" required/></label>
+                    </p>
+                    <p>
+                        <label for="message">Message: </label>
+                    </p>
+                    <textarea id="message" name="message" rows="5" cols ="45">
+                    </textarea>
+                    <button id="send">Submit</button>
+                </form>
+                <p id="results"></p>
+            </section>
+        </section>
+
+        <section id="cart" class="hidden">
+            <aside id="info" class="hidden"></aside>
+            <section id="price" class="hidden">
+                <p id="totalPrice"></p>
+                <button id="checkout">Checkout</button>
+            </section>
+            <section id="confirmation" class="hidden">
+                <p></p>
+                <button id="shop">Continue Shopping!</button>
+            </section>
+        </section>
+
+    </main>
+    <footer>
+        <a href="citations.txt">Citations &copy; 2024</a>
+    </footer>
+</body>
+</html>

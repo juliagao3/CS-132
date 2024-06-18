@@ -1,0 +1,41 @@
+Please fill out the following and submit with your Final Project submission 
+(added to help us know what to focus on when grading, what was intentionally incomplete, etc.):
+
+1. What is your estimated grade for the Final Project (roughly of 100)? For partner projects,
+   do you think the workload distribution was fair?
+
+   I think the estimated grade is 95 ~ 100. I think the project is very strong and I implemented
+   lots of the feedback that was given to me during OH. I think I implemented more than two features
+   and also made the website more user friendly and considered the different screen sizes. I think
+   the workload distribution was fair. 
+
+2. What is your estimated grade for the course (letter grade)? You can support your
+   estimate with examples of demonstrated engagement in the course material, strengths
+   (and weaknesses) over the term, and growth throughout the material (some assignment
+   grading feedback was delayed, but we would like to know what resources you used to
+   iterate on the material, such as lectures, OH, Discord, etc.)
+
+   I would think either an A/A+ depending on how well I do on the final project. I'm hoping
+   for an A+. I have engaged with the showcase of all of my CPs. I have also been to OH
+   asking questions and understanding the material. I do my best to implement the feedback
+   given so that my code quality is more clean and neat. I did use extra tags but I get feedback
+   and improve my code given the feedback. I think this term was a bit harder than the other
+   terms and definitely need to improve time management. I used lecture slides, OH, and Discord
+   to ask about different tags and learn. I think using El's OH helped me get feedback on my
+   work and implement the different feedback given. 
+
+3. To what extent would you like feedback in your project (e.g. thorough, particular areas of the
+   project, or just a grade)?
+
+   I would like thorough feedback since I think that it would be useful to learn what areas
+   I could improve on because I know this isn't the last time I will be creating a website. 
+
+4. Anything else you would like El to know when grading?
+
+   The final project will be on GitHub since I have a lot of images and tried compressing but I
+   have too many.
+
+5. Are you open to sharing your project/reflection for future terms? If so, would you
+   like named credit or anonymous?
+
+   Yes. I would like the credit or at least put my name on the different items you want to share.

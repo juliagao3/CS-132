@@ -1,0 +1,225 @@
+/* Name: Julia Gao
+     Term: Spring 2024
+     This is the store.css for the index.html. It is going to be a tea shop
+     inspired by Yi Fang. 
+*/
+
+ul, h1, .container, #labels, #product, #products, .item, #cart, #location, #touch {
+    display: flex;
+}
+
+h1, #shopBtn, #single > #back, #single > #front {
+    position: absolute;
+}
+
+#shopBtn, li, h2, #products > figure > figcaption, #front, #back, #checkout, footer,
+#send, #shop {
+    font-family: 'Amatic SC', Arial, sans-serif;
+}
+
+#shopBtn, #products > figure > figcaption, #cart > aside > figure > button, #front, 
+#back, #checkout, #send, footer, article, #shop {
+    font-size: 2em;
+}
+
+#labels > label, #labels input[type="checkbox"], #price > p, .item > div > pre, 
+#location > pre, textarea, #contact-form > p > label, #contact-form > div > p > label,
+#single > figure > p, #results  {
+    font-size: 1.5em;
+}
+
+#product.hidden, #cart.hidden, #home.hidden, #contact.hidden, #single.hidden,
+#promotion.hidden, #faq.hidden, #confirmation.hidden, #info.hidden, #price.hidden {
+    display: none;
+}
+
+#prodBtn, #homeBtn, #cartBtn, #contactBtn, #shopBtn, #labels input[type="checkbox"], 
+#products > figure > img, #promBtn, #front, #back, #cart > aside > figure > button,
+#checkout, #send, #faqBtn, h4, #shop {
+    cursor: pointer;
+}
+
+h1, .container, .item, #location {
+    justify-content: center;
+}
+
+.container, #products > figure > figcaption, h1, #touch {
+    align-items: center;
+}
+
+#products > figure > img, #home > div > img, textarea, #email, #first, #last {
+    width: 100%;
+}
+
+li, #shopBtn, #back, #front, #cart > aside > figure > button, #checkout, #send, #shop {
+    border: none;
+}
+
+#contact-form, #contact-form > div, #single > figure > p, #results, #email, #first, 
+#last, #promotion > ul > li, article, #confirmation > p, #price > p, #location > pre {
+    font-family: monospace;
+}
+
+#contact-form > p > input, #contact-form > div > p > input, #labels input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+.container, #labels > label, #promotion > ul > li, article, #location > pre {
+    padding: 20px;
+}
+
+h2, li {
+    font-size: 3.5em;
+}
+
+#cart > aside > figure > img, .item > img {
+    height: 40%;
+}
+
+.item > div > pre, filter {
+    margin-left: 20px;
+}
+
+#back {
+    top: 20%;
+    left: 15%;
+}
+
+h1, #shopBtn {
+    font-weight: bold;
+}
+
+#shopBtn, #front, #back, #send, #shop {
+    border-radius: 5px;
+}
+
+#shopBtn, #front, #back, #cart > aside > figure > button {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#shopBtn, #front, #back {
+    padding: 20px 30px;
+}
+
+footer, #results, #promotion > ul, #faq, #confirmation > p {
+    text-align: center;
+}
+
+#labels, #promotion > ul, #touch {
+    flex-direction: column;
+}
+
+#email, #first, #last {
+    font-size: 1em;
+}
+
+#send, #home > div > img {
+    display: block;
+}
+
+#promotion > ul > li, article {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: translate(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0;
+}
+
+#promotion > ul > li, #confirmation > p {
+    font-size: 2.5em;
+}
+
+#cart > aside > figure > img, #location > img {
+    width: 30%;
+}
+
+#cart {
+    justify-content: space-between;
+    max-width: 1300px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+h1 {
+    font-size: 6em;
+    font-family: 'Whisper', Arial, sans-serif;
+}
+
+#shopBtn {
+    top: 85%;
+    left: 45%;
+}
+
+#send {
+    padding: 10px;
+    margin: auto auto;
+}
+
+#home > div > img {
+    opacity: 0.75;
+}
+
+#labels > label {
+    margin-left: 80px;
+    min-width: 140px;
+}
+
+#products {
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#products > figure {
+    flex: 1 1 25%;
+    max-width: 25%;
+}
+
+.item > img {
+    width: 50%;
+    margin-left: 50px;
+    padding-top: 10px;
+}
+
+#single > #front {
+    left: 75%;
+    top: 70%;
+}
+
+#price {
+    padding-top: 40px;
+    min-width: 300px;
+}
+
+#location > img {
+    height: 30%;
+}
+
+#location > pre {
+    min-width: 100px;
+}
+
+article > p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#confirmation > p {
+    margin-left: 150px;
+}
+
+#shop {
+    position: relative;
+    left: 80%;
+}

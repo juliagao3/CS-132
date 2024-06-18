@@ -1,0 +1,34 @@
+{
+  "iceLevels": ["No Ice", "Light Ice", "Regular", "Extra Ice"],
+  "sugarLevels": ["No Sugar", "25%", "50%", "75%", "100% (Regular)"],
+  "toppings": [
+    { "name": "Messy Boba", "price": 0.95 },
+    { "name": "Golden Boba", "price": 0.75 },
+    { "name": "Honey Boba", "price": 0.75 },
+    { "name": "Crystal Boba", "price": 0.85 },
+    { "name": "Lychee Jelly", "price": 0.75 },
+    { "name": "Grass Jelly", "price": 0.75 },
+    { "name": "Red Beans", "price": 0.75 },
+    { "name": "Oreo", "price": 0.75 },
+    { "name": "Pudding", "price": 0.85 }
+  ],
+  "ounces": ["1oz", "2oz", "4oz", "8oz"],
+  "items": ["1", "2", "3", "4", "5"],
+  "promotions": ["Buy two 4oz tea and get one 4oz tea for free!",
+                  "Get 15% off of total order by signing up!",
+                  "Get free shipping over $50!",
+                  "Get $50 off when you purchase over $150!",
+                  "Summer sale! Get 20% off your order!"],
+  "faq": [{"question": "What is the most popular product?",
+          "answer": "Our most popular tea is Uji Matcha, a vibrant green tea powder from Japan known for its rich flavor and numerous health benefits. Customers love its smooth, umami taste and energizing properties."},
+          {"question": "What tea would you suggest for the health benefits?",
+          "answer": "Green Tea is highly recommended for its antioxidant properties and numerous health benefits, including improved metabolism and heart health."},
+          {"question": "What types of tea do you offer?",
+          "answer": "We offer a variety of teas including black, green, white, and oolong. Each type has its own unique flavor profile and health benefits."},
+          {"question": "Can I return or exchange tea products?",
+          "answer": "We accept returns or exchanges on unopened tea products within 30 days of purchase with a receipt. Unfortunately, we cannot accept returns on opened tea products unless there is a quality issue."},
+          {"question": "How long do your teas last?",
+          "answer": "Properly stored tea can last for several months to years, depending on the type. Generally, black teas have a longer shelf life than green or white teas. For the best flavor, consume your tea within 6-12 months."}
+        ]
+  }
+  
