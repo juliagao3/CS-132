@@ -32,6 +32,7 @@
         </nav>
     </header>
     <main>
+        <p id="message-area" class="hidden"></p>
         <section id="home">
             <div class="container">
                 <img src="imgs/bulk-image-crop/shop.png" alt="Tea shoppe">
@@ -60,9 +61,9 @@
         <section id="faq" class="hidden"></section>
 
         <section id="contact" class="hidden">
+            <h2>Get In Touch</h2>
             <section id="touch">
                 <form id="contact-form">
-                    <h2>Get In Touch</h2>
                     <p>
                         <label>First Name: <input id="first" type="text" name="first" required/></label>
                     </p>
@@ -75,8 +76,7 @@
                     <p>
                         <label for="message">Message: </label>
                     </p>
-                    <textarea id="message" name="message" rows="5" cols ="45">
-                    </textarea>
+                    <textarea id="message" name="message" rows="5" cols="40" minlength="10" required></textarea>
                     <button id="send">Submit</button>
                 </form>
                 <p id="results"></p>

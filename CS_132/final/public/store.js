@@ -17,8 +17,8 @@
     const INTERVAL = 3000;
     const TIME = 500;
     const TIMER = 1000;
+    const DEBUG = 1;
     let count = 0;
-    let totalPrice = 0;
     
     /**
      * Adds all of the event listeners necessary for the document
@@ -64,6 +64,8 @@
             evt.preventDefault();
             post();
         });
+
+        window.addEventListener('load', loadCart);
     }
 
     // View of the home page
@@ -249,12 +251,12 @@
             const p = gen('pre');
             p.textContent = `Origin: ${info['origin']}
 
-    Nutrional Values:
+Nutrional Values:
     - Calories: ${info['nutritional_values']['calories']}
     - Caffeine: ${info['nutritional_values']['caffeine_mg']}
     - Antioxidants: ${info['nutritional_values']['antioxidants_mg']}
 
-    Price per ounce: $${info['price_per_ounce_usd']}`;
+Price per ounce: $${info['price_per_ounce_usd']}`;
 
             const button = gen('button');
             button.textContent = 'Back';
@@ -282,7 +284,7 @@
             button2.textContent = 'Add to Cart';
             button2.id = 'front';
             button2.addEventListener("click", () => {
-                const cart =  qs('#cart');
+                const cart = qs('#cart');
 
                 const aside = qs('#info');
                 const section = qs('#price');
@@ -297,11 +299,22 @@
                 const div2 = gen('div');
                 const head = gen('h2');
                 head.textContent = info['name'];
-                const p = gen('pre');
                 const quantity = filter.value;
                 const item = filter2.value;
-                p.textContent = `Quantity: ${quantity}
-    Items: ${item}`;
+                const p = gen('pre');
+
+                const quantitySpan = gen('span');
+                quantitySpan.classList.add('q');
+                quantitySpan.textContent = quantity;
+
+                const itemsSpan = gen('span');
+                itemsSpan.classList.add('q');
+                itemsSpan.textContent = item;
+                
+                p.innerHTML = `Quantity: `;
+                p.appendChild(quantitySpan);
+                p.innerHTML += `<br>Items: `;
+                p.appendChild(itemsSpan);
 
                 const price = gen('p');
                 let total = parseFloat(quantity.match(/\d+/)[NUM]) * parseFloat(item) * parseFloat(info['price_per_ounce_usd']);
@@ -327,12 +340,14 @@
                 del.addEventListener("click", () => {
                     aside.removeChild(fig);
                     section.removeChild(price);
+
+                    removeItemFromLocalStorage(info['name']);
+                    updateTotalPriceInLocalStorage(-total);
+                    updateTotalPriceDisplay();
+
                     const p = qs('#totalPrice');
                     if (aside.childNodes.length == NUM) {
-                        p.textContent = 'Total: $0';
-                        totalPrice = 0;
-                    } else {
-                        p.textContent = `Total: $${totalPrice - total}`;
+                        p.textContent = 'Total Price: $0';
                     }
                 });
 
@@ -343,8 +358,11 @@
                 setTimeout(() => {
                     div.removeChild(add);
                 }, TIMER);
+                
+                updateTotalPriceDisplay();
 
-                totalPrice = totalPrice + total;
+                addItemToLocalStorage(info, quantity, item, total);
+                updateTotalPriceInLocalStorage(total);
             });
 
             figure.appendChild(image);
@@ -357,6 +375,123 @@
         }
     }
 
+    /**
+     * 
+     * @param {String} info - Information about product
+     * @param {String} quantity - quantity wanted
+     * @param {String} item - number of items wanted
+     * @param {Integer} total - total price 
+     */
+    function addItemToLocalStorage(info, quantity, item, total) {
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        cartItems.push({
+            img: info['img'],
+            name: info['name'],
+            quantity: quantity,
+            items: item,
+            price: total,
+            timestamp: new Date().toUTCString()
+        });
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+
+    /**
+     * 
+     * @param {Integer} amount - price you add or remove
+     */
+    function updateTotalPriceInLocalStorage(amount) {
+        let totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+        totalPrice += amount;
+        localStorage.setItem('totalPrice', totalPrice);
+    }
+    
+    // Displays the total price
+    function updateTotalPriceDisplay() {
+        const p = qs('#totalPrice');
+        const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+        p.textContent = `Total Price: $${totalPrice}`;
+    }
+
+    /**
+     * 
+     * @param {String} name - item name
+     */
+    function removeItemFromLocalStorage(name) {
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        cartItems = cartItems.filter(item => item.name != name);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+
+    // Loads the cart from storage
+    function loadCart() {
+        const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        storedCartItems.forEach(item => {
+            const cart = qs('#cart');
+
+            const aside = qs('#info');
+            const section = qs('#price');
+            const fig = gen('figure');
+            fig.classList.add('item');
+            
+            const img = gen('img');
+            img.src = item.img;
+            img.alt = item.name;
+    
+            const div2 = gen('div');
+            const head = gen('h2');
+            head.textContent = item.name;
+    
+            const p = gen('pre');
+            const quantitySpan = gen('span');
+            quantitySpan.classList.add('q');
+            quantitySpan.textContent = item.quantity;
+    
+            const itemsSpan = gen('span');
+            itemsSpan.classList.add('q');
+            itemsSpan.textContent = item.items;
+            
+            p.innerHTML = `Quantity: `;
+            p.appendChild(quantitySpan);
+            p.innerHTML += `<br>Items: `;
+            p.appendChild(itemsSpan);
+
+            const price = gen('p');
+            price.textContent = `${item.name}: $${item.price}`;
+            price.value = item.price;
+
+            div2.appendChild(head);
+            div2.appendChild(p);
+
+            fig.appendChild(img);
+            fig.appendChild(div2);
+            section.insertBefore(price, qs('#totalPrice'));
+            aside.appendChild(fig);
+            cart.appendChild(aside);
+            cart.appendChild(section);
+
+            const del = gen('button');
+            del.innerHTML = '&#x1F5D1;';
+
+            fig.appendChild(del);
+
+            del.addEventListener("click", () => {
+                aside.removeChild(fig);
+                section.removeChild(price);
+
+                removeItemFromLocalStorage(item.name);
+                updateTotalPriceInLocalStorage(-item.price);
+                updateTotalPriceDisplay();
+
+                const p = qs('#totalPrice');
+                if (aside.childNodes.length == NUM) {
+                    p.textContent = 'Total Price: $0';
+                }
+            });
+
+            updateTotalPriceDisplay();
+        });
+    }
+    
     /**
      * 
      * @param {string} filter - 'select' to add to
@@ -475,13 +610,11 @@
     async function post() {
         let form = new FormData(id("contact-form"));
 
-        try {
-            let response = await fetch("/contacts", {method: "POST", body: form});
-            response = await checkStatus(response).text();
-            showRecieved(response);
-        } catch (err) {
-            handleError(ERROR);
-        }
+        fetch("/contacts", { method:"POST", body:form })
+        .then(checkStatus)
+        .then(resp => resp.text())
+        .then(showRecieved)
+        .catch(handleError);
     }
 
     /**
@@ -511,6 +644,7 @@
         qs('#price').classList.remove('hidden');
         qs('#info').classList.remove('hidden');
 
+        const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
         const p = qs('#totalPrice');
         p.textContent = `Total: $${totalPrice}`;
 
@@ -519,6 +653,7 @@
     }
 
     // Display the cart info and submits purchase and retrieves response
+    // Note: Can use localstorage instead
     async function getCartInfo() {
         try {
             const items = qsa('#info .item');
@@ -527,12 +662,15 @@
                 const img = i.querySelector('img');
                 const div = i.querySelector('div');
                 const name = div.querySelector('h2');
-                const description = div.querySelector('pre');
+
+                const preElement = div.querySelector('pre');
+                const spans = preElement.querySelectorAll('span.q');
 
                 const data = {
                     "img": img.src,
                     "name": name.textContent,
-                    "quantity/item": description.textContent,
+                    "quantity": spans[NUM].textContent,
+                    "items": spans[NUM2].textContent,
                     "timestamp" : new Date().toUTCString()
                 };
 
@@ -565,17 +703,16 @@
         const button = qs('#shop');
         button.addEventListener("click", () => {
             qs('#confirmation').classList.add('hidden');
-            qs('#product').classList.remove('hidden');
+            viewProd();
 
             qs('#info').innerHTML = "";
 
             const section = qs('#price');
             section.innerHTML = "";
-            totalPrice = NUM;
 
             const p = gen('p');
             p.id = "totalPrice";
-            p.textContent = `Total Price: ${totalPrice}`;
+            p.textContent = `Total Price: $0`;
 
             const button2 = gen('button');
             button2.id = "checkout";
@@ -583,6 +720,8 @@
             
             section.appendChild(p);
             section.appendChild(button2);
+
+            localStorage.clear();
         });
     }   
 

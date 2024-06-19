@@ -3,7 +3,8 @@
     CS 132 Spring 2024
     Date: June 15, 2024
     This is app.js that implements the backend API for the final project which inclues 4 GET 
-    endpoints and 2 POST endpoints.
+    endpoints and 2 POST endpoints. The two chosen features which are FAQ and Promotion uses
+    GET endpoints.
 */
 
 "use strict";
@@ -15,6 +16,7 @@ const multer = require("multer");
 const SERVER_ERR_CODE = 500;
 const CLIENT_ERR_CODE = 400;
 const SERVER_ERROR = "Something went wrong on the server, please try again later.";
+const DEBUG = true;
 
 app.use(express.static("public"));
 app.use(multer().none()); 
@@ -30,7 +32,7 @@ app.get("/menu", async (req, res, next) => {
         const contents = JSON.parse(data);
         res.json(contents);
     } catch (err) {
-        res.send(SERVER_ERR_CODE);
+        res.status(SERVER_ERR_CODE);
         err.message = SERVER_ERROR;
         next(err);
     }
@@ -55,7 +57,7 @@ app.get("/menu/:category", async (req, res, next) => {
         res.type("text");
         res.send(contents[categoryDir]);
     } catch (err) {
-        res.send(SERVER_ERR_CODE);
+        res.status(SERVER_ERR_CODE);
         err.message = SERVER_ERROR;
         next(err);
     }
@@ -82,14 +84,14 @@ app.get("/menu/:category/:item", async (req, res, next) => {
 
         if (!value) {
             res.status(CLIENT_ERR_CODE).send(CLIENT_ERR_CODE + " Item " + 
-            value + " was not found.");
+            item + " was not found.");
             return;
         }
 
         res.type("text");
         res.send(value);
     } catch (err) {
-        res.send(SERVER_ERR_CODE);
+        res.status(SERVER_ERR_CODE);
         err.message = SERVER_ERROR;
         next(err);
     }
@@ -104,7 +106,7 @@ app.get("/other-info", async (req, res, next) => {
         const contents = JSON.parse(data);
         res.json(contents);
     } catch (err) {
-        res.send(SERVER_ERR_CODE);
+        res.status(SERVER_ERR_CODE);
         err.message = SERVER_ERROR;
         next(err);
     }
@@ -120,8 +122,7 @@ app.post("/contacts", async (req, res, next) => {
     let message = processMsg(req.body.first, req.body.last, req.body.email, req.body.message);
     if (!message) {
         res.status(CLIENT_ERR_CODE);
-        res.send("The message need to have at least 10 characters.");
-        next(Error("Required POST parameters for /contact: first name, last name, email, message."))
+        next(Error("Required POST parameters for /contact: first name, last name, email, message."));
     }
     try {
         let allMessages = await fsp.readFile("all-message.json", "utf8");
@@ -131,7 +132,7 @@ app.post("/contacts", async (req, res, next) => {
         res.type("text");
         res.send("Your message has been recieved! Will respond soon through email.");
     } catch (err) {
-        res.send(SERVER_ERR_CODE);
+        res.status(SERVER_ERR_CODE);
         err.message = SERVER_ERROR;
         next(err);
     }
@@ -147,10 +148,6 @@ app.post("/contacts", async (req, res, next) => {
  */
 function processMsg(firstName, lastName, email, msg) {
     let info = null;
-    msg = msg.trim();
-    if (msg == '' || msg.length <= 10) {
-        return info;
-    }
     if (firstName && lastName && email && msg) {
         info = {
             "first name": firstName,
@@ -166,6 +163,8 @@ function processMsg(firstName, lastName, email, msg) {
 * Returns a success message when purchase is added successfully
 * Gives a 500 error when server goes wrong or cannot read file 
 */ 
+// Note, can use localstorage on the client side to store items so that the
+// items are kept after refreshing the page
 app.post("/cart",  async (req, res, next) => {
     const items = req.body;
     
@@ -181,11 +180,22 @@ app.post("/cart",  async (req, res, next) => {
         res.send("Order confirmed! You will recieve a confirmation email from us soon!");
 
     } catch (err) {
-        res.send(SERVER_ERR_CODE);
+        res.status(SERVER_ERR_CODE);
         err.message = SERVER_ERROR;
         next(err);
     }
 });
+
+// Error handling middleware that is able to handle different types of errors
+function errorHandler(err, req, res, next) {
+    if (DEBUG) {
+        console.error(err);
+    }
+    res.type("text");
+    res.send(err.message);
+}
+
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {

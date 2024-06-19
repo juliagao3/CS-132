@@ -1,6 +1,6 @@
 /* Name: Julia Gao
      Term: Spring 2024
-     This is the store.css for the index.html. It is going to be a tea shop
+     This is the store.css for the index.html. It is going to be a tea shop that sells tea
      inspired by Yi Fang. 
 */
 
@@ -29,13 +29,14 @@ h1, #shopBtn, #single > #back, #single > #front {
 }
 
 #product.hidden, #cart.hidden, #home.hidden, #contact.hidden, #single.hidden,
-#promotion.hidden, #faq.hidden, #confirmation.hidden, #info.hidden, #price.hidden {
+#promotion.hidden, #faq.hidden, #confirmation.hidden, #info.hidden, #price.hidden,
+#message-area.hidden {
     display: none;
 }
 
 #prodBtn, #homeBtn, #cartBtn, #contactBtn, #shopBtn, #labels input[type="checkbox"], 
 #products > figure > img, #promBtn, #front, #back, #cart > aside > figure > button,
-#checkout, #send, #faqBtn, h4, #shop {
+#checkout, #send, #faqBtn, h4, #shop, #labels > label {
     cursor: pointer;
 }
 
@@ -43,7 +44,7 @@ h1, .container, .item, #location {
     justify-content: center;
 }
 
-.container, #products > figure > figcaption, h1, #touch {
+.container, #products > figure > figcaption, h1 {
     align-items: center;
 }
 
@@ -101,7 +102,7 @@ h1, #shopBtn {
     padding: 20px 30px;
 }
 
-footer, #results, #promotion > ul, #faq, #confirmation > p {
+footer, #results, #promotion > ul, #faq, #confirmation > p, #contact > h2 {
     text-align: center;
 }
 
@@ -132,9 +133,17 @@ footer, #results, #promotion > ul, #faq, #confirmation > p {
     width: 30%;
 }
 
+#touch, #send {
+    margin: auto;
+}
+
 #cart {
     justify-content: space-between;
     max-width: 1300px;
+}
+
+#touch {
+    max-width: 450px;
 }
 
 a {
@@ -164,7 +173,6 @@ h1 {
 
 #send {
     padding: 10px;
-    margin: auto auto;
 }
 
 #home > div > img {
